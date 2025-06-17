@@ -1,0 +1,19 @@
+name: 'Get User'
+description: 'Get the current user running the GitHub runner'
+inputs:
+  name: # id of input
+    required: true
+    default: 'World'
+    description: 'A name to greet'
+
+outputs:
+  greetings:
+    description: 'Our greetings to you'
+  current_user:
+    description: 'Current user'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{inputs.name}}
